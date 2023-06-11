@@ -72,7 +72,7 @@ func removeDuplicateStr(str []string) []string {
 }
 
 func indexValue(letter string) int {
-	alphabetInLowerCase := "0abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ"
+	alphabetInLowerCase := "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ"
 	index := strings.Index(alphabetInLowerCase, letter)
-	return index;
+	return index + 1;
 }
