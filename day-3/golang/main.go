@@ -23,10 +23,10 @@ func main() {
 		stringLength := len(str)
 		strFirstHalf := str[0:(stringLength / 2)]
 		strSecondHalf := str[stringLength / 2:stringLength]
-
 		fmt.Printf("%s : %s\n", strFirstHalf, strSecondHalf)
+
 		currentArr := make([]string, 0)
-		for i := 0; i < len(strFirstHalf) - 1; i++ {
+		for i := 0; i < len(strFirstHalf); i++ {
 			currentChar := string(rune(strFirstHalf[i]))
 
 			for x := 0; x < len(strSecondHalf); x++ {
@@ -52,11 +52,10 @@ func main() {
 
 	var total int = 0
 	for _, letter := range arr {
-		index := getValue(letter)
-		total += index
+		total += indexValue(letter)
 	}
 
-	fmt.Println(total)
+	fmt.Printf("Total: %d", total)
 }
 
 func removeDuplicateStr(str []string) []string {
@@ -72,8 +71,8 @@ func removeDuplicateStr(str []string) []string {
 	return list
 }
 
-func getValue(letter string) int {
-	alphabetInLowerCase := "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ"
+func indexValue(letter string) int {
+	alphabetInLowerCase := "0abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ"
 	index := strings.Index(alphabetInLowerCase, letter)
-	return index + 1;
+	return index;
 }
